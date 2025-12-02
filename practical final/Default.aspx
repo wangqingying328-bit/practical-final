@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="HotelSite.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="practical_final.Home" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,10 +10,10 @@
     <div class="header">
         <div class="container">
             <div class="navbar">
-                <div class="logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 小型酒店</div>
+                <div class="logo">&nbsp;El Hotel Paraíso </div>
                 <ul class="nav-menu">
-                    <li><a href="Home.aspx">首页</a></li>
-                    <li><a href="Login.aspx">登录</a></li>
+                    <li>front page</li>
+                    <li>Log in</li>
                 </ul>
             </div>
         </div>
@@ -22,39 +22,39 @@
     <div class="container">
         <form id="form1" runat="server">
             <div class="card">
-                <h1>Bienvenido</h1>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descubre un oasis de lujo y tranquilidad El Hotel Paraíso del Sol es un establecimiento de 5 estrellas ubicado frente a la playa más exclusiva de la costa. </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Con más de 50 años de historia, combinamos la elegancia clásica con las comodidades más modernas para ofrecerle una experiencia inolvidable. Nuestras instalaciones incluyen: </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Habitaciones y suites: Amplias y luminosas, con balcón privado, vistas al mar o a los jardines tropicales, WiFi de alta velocidad y minibar.</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Gastronomía: Dos restaurantes gourmet (uno especializado en cocina mediterránea y otro en pescados frescos del día) y un lobby bar con terraza panorámica.</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Bienestar: Spa completo con tratamientos termales, piscina climatizada al aire libre, gimnasio totalmente equipado y acceso directo a la playa privada. </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Eventos: Salones versátiles y un jardín tropical perfectos para bodas, reuniones de negocios y eventos sociales. Nuestro equipo de profesionales está dedicado a atender cada detalle con calidez y discreción, asegurando que su estancia sea perfecta desde el momento de su llegada.</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp; Ideal para viajes en pareja, familias y viajeros de negocios. Reserve su escape perfecto. </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp; Su paraíso personal le espera. </p>
+                <h1>Welcome</h1>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Discover an oasis of luxury and tranquility. El Holtel Paraíso is a five-star establishment located in front of the most exclusive beach on the coast.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With over 50 years of history, we combine classic elegance with the most modern comforts to offer you an unforgettable experience. Our facilities include.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Rooms and Suites: Spacious and bright, featuring a private balcony with sea or tropical garden views, high-speed WiFi, and a minibar.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Gastronomy: Two gourmet restaurants (one specializing in Mediterranean cuisine and another in fresh daily catch) and a lobby bar with a panoramic terrace.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Wellness: A full-service spa with thermal treatments, an outdoor heated swimming pool, a fully equipped gym, and direct access to a private beach. </p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •&nbsp; Events: Versatile function rooms and a tropical garden, perfect for weddings, business meetings, and social events. Our team of professionals is dedicated to attending to every detail with warmth and discretion, ensuring your stay is perfect from the moment you arrive.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Ideal for couples, families, and business travelers. Book your perfect escape. </p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Your personal paradise awaits. </p>
                 
-                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 酒店特色：</h3>
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hotel Features:</h3>
                 <ul>
-                    <li>舒适优雅的客房</li>
-                    <li>24小时前台服务</li>
-                    <li>免费Wi-Fi</li>
-                    <li>便捷的在线预订</li>
+                    <li>Offers suites with panoramic sea views, five specialized restaurants</li>
+                    <li>An infinity pool, a premium category spa </li>
+                    <li>A wide variety of water activities</li>
+                    <li>Free WiFi</li>
                 </ul>
                 
                 <img src="https://img95.699pic.com/photo/40236/8440.jpg_wh860.jpg" 
                      alt="Hotel Image" style="width:100%; max-width:800px; margin:20px 0;" />
                 
-                <p>现在就开始您的旅程，体验我们贴心的服务！</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start your journey now and experience our attentive service!</p>
                 
-                <asp:Button ID="btnLogin" runat="server" Text="立即登录" 
-                    CssClass="btn btn-primary" PostBackUrl="~/Login.aspx" Height="39px" Width="321px" />
+                <asp:Button ID="btnLogin" runat="server" Text="Log in now" 
+                    CssClass="btn btn-primary" PostBackUrl="~/Login.aspx" Height="39px" Width="1189px" />
             </div>
         </form>
     </div>
 
     <div class="footer">
         <div class="container">
-            <p>© 2025 小型酒店 - 版权所有</p>
-            <p>联系电话：123-456-7890 | 地址：某某市某某路123号</p>
+            <p>© 2025 Hotel Paraíso - All rights reserved</p>
+            <p>Contact number: 00-000-0000 | Address: Gandia</p>
         </div>
     </div>
 </body>

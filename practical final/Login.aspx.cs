@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace HotelSite
+namespace practical_final
 {
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 如果已登录，根据角色重定向
+           
             if (Session["UserType"] != null)
             {
                 string userType = Session["UserType"].ToString();
@@ -25,7 +25,7 @@ namespace HotelSite
             string user = txtUser.Text.Trim();
             string pass = txtPass.Text.Trim();
 
-            // 参数化查询防止SQL注入
+            
             string sql = "SELECT Role FROM Users WHERE Username = @User AND Password = @Pass";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -41,7 +41,6 @@ namespace HotelSite
                 Session["Username"] = user;
                 Session["UserType"] = role;
 
-                // 如果是客户，还需要获取ClientID
                 if (role == "client")
                 {
                     sql = "SELECT ClientID FROM Clients WHERE Name = @Name";
@@ -63,7 +62,7 @@ namespace HotelSite
             }
             else
             {
-                lblError.Text = "用户名或密码错误！";
+                lblError.Text = "Incorrect username or password!";
                 lblError.Visible = true;
             }
         }

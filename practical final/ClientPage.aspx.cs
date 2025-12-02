@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace HotelSite
+namespace practical_final
 {
     public partial class ClientPage : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 检查是否为客户
+            
             if (!CheckRole("client"))
             {
                 Response.Redirect("Login.aspx");
@@ -26,7 +26,7 @@ namespace HotelSite
         {
             if (Session["ClientID"] == null)
             {
-                lblMessage.Text = "未找到客户信息！";
+                lblMessage.Text = "No customer information found！";
                 return;
             }
 

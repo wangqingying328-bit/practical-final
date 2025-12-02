@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="HotelSite.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="practical_final.Login" %>
 
 <!DOCTYPE html>
 <html>
@@ -9,13 +9,13 @@
 
 <form id="form1" runat="server">
 
-    <h2>用户登录</h2>
+    <h2>User Login</h2>
 
-    <label>用户名：</label>
+    <label>username:</label>
     <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
     <br /><br />
 
-    <label>密码：</label>
+    <label>password:</label>
     <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
     <br /><br />
 
@@ -24,18 +24,18 @@
         runat="server"
         ControlToValidate="txtUser"
         ValidationExpression="^[a-zA-Z0-9]+$"
-        ErrorMessage="用户名只能包含字母或数字"
+        ErrorMessage="Usernames can only contain letters or numbers."
         ForeColor="Red" />
     <br />
 
-    <!-- 错误消息标签 -->
+    
     <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="false"></asp:Label>
     <br /><br />
 
     <asp:Button 
         ID="btnLogin"
         runat="server"
-        Text="登录"
+        Text="Log in"
         OnClick="btnLogin_Click" />
 
 </form>

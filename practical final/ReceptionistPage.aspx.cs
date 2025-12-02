@@ -5,13 +5,13 @@ using System.Data;
 using System.Net.Sockets;
 using System.Web.UI.WebControls;
 
-namespace HotelSite
+namespace practical_final
 {
     public partial class ReceptionistPage : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 检查是否为前台
+            
             if (!CheckRole("receptionist"))
             {
                 Response.Redirect("Login.aspx");
@@ -26,9 +26,6 @@ namespace HotelSite
             }
         }
 
-        // ============================
-        //  加载客户列表
-        // ============================
         void LoadClients()
         {
             string sql = "SELECT * FROM Clients ORDER BY ClientID";
@@ -37,9 +34,7 @@ namespace HotelSite
             gvClients.DataBind();
         }
 
-        // ============================
-        //  加载所有预订
-        // ============================
+        
         void LoadReservations()
         {
             string sql = @"SELECT r.*, c.Name as ClientName 
@@ -51,9 +46,7 @@ namespace HotelSite
             gvReservations.DataBind();
         }
 
-        // ============================
-        //  加载客户下拉列表
-        // ============================
+    
         void LoadClientDropdown()
         {
             string sql = "SELECT ClientID, Name FROM Clients ORDER BY Name";
@@ -62,7 +55,7 @@ namespace HotelSite
             ddlClient.DataTextField = "Name";
             ddlClient.DataValueField = "ClientID";
             ddlClient.DataBind();
-            ddlClient.Items.Insert(0, new ListItem("--选择客户--", "0"));
+            ddlClient.Items.Insert(0, new ListItem("--Select Customers--", "0"));
         }
 
         // ============================
@@ -84,7 +77,7 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblMessage.Text = "客户添加成功！";
+                    lblMessage.Text = "Customer added successfully!";
                     ClearClientFields();
                     LoadClients();
                     LoadClientDropdown();
@@ -92,7 +85,7 @@ namespace HotelSite
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "添加失败：" + ex.Message;
+                lblMessage.Text = "Addition failed:" + ex.Message;
             }
         }
 
@@ -103,7 +96,7 @@ namespace HotelSite
         {
             if (string.IsNullOrEmpty(txtClientID.Value))
             {
-                lblMessage.Text = "请先选择要修改的客户！";
+                lblMessage.Text = "Please select the customer you wish to modify!";
                 return;
             }
 
@@ -125,7 +118,7 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblMessage.Text = "客户信息更新成功！";
+                    lblMessage.Text = "Customer information updated successfully!";
                     ClearClientFields();
                     LoadClients();
                     LoadClientDropdown();
@@ -133,18 +126,16 @@ namespace HotelSite
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "更新失败：" + ex.Message;
+                lblMessage.Text = "Update failed:" + ex.Message;
             }
         }
 
-        // ============================
-        //  删除客户
-        // ============================
+      
         protected void btnDeleteClient_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtClientID.Value))
             {
-                lblMessage.Text = "请先选择要删除的客户！";
+                lblMessage.Text = "Please select the customers you want to delete!";
                 return;
             }
 
@@ -159,7 +150,7 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblMessage.Text = "客户删除成功！";
+                    lblMessage.Text = "Deletion successful!";
                     ClearClientFields();
                     LoadClients();
                     LoadClientDropdown();
@@ -167,18 +158,16 @@ namespace HotelSite
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "删除失败：" + ex.Message;
+                lblMessage.Text = "Deletion failed:" + ex.Message;
             }
         }
 
-        // ============================
-        //  添加预订
-        // ============================
+      
         protected void btnAddRes_Click(object sender, EventArgs e)
         {
             if (ddlClient.SelectedValue == "0")
             {
-                lblResMessage.Text = "请选择客户！";
+                lblResMessage.Text = "Please select a customer!";
                 return;
             }
 
@@ -198,25 +187,22 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblResMessage.Text = "预订添加成功！";
+                    lblResMessage.Text = "Reservation added successfully!";
                     ClearReservationFields();
                     LoadReservations();
                 }
             }
             catch (Exception ex)
             {
-                lblResMessage.Text = "添加失败：" + ex.Message;
+                lblResMessage.Text = "Addition failed:" + ex.Message;
             }
         }
 
-        // ============================
-        //  修改预订
-        // ============================
         protected void btnUpdateRes_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtReservationID.Value))
             {
-                lblResMessage.Text = "请先选择要修改的预订！";
+                lblResMessage.Text = "Please select the reservation you wish to modify first!";
                 return;
             }
 
@@ -238,14 +224,14 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblResMessage.Text = "预订更新成功！";
+                    lblResMessage.Text = "Reservation updated successfully!";
                     ClearReservationFields();
                     LoadReservations();
                 }
             }
             catch (Exception ex)
             {
-                lblResMessage.Text = "更新失败：" + ex.Message;
+                lblResMessage.Text = "Update failed:" + ex.Message;
             }
         }
 
@@ -256,7 +242,7 @@ namespace HotelSite
         {
             if (string.IsNullOrEmpty(txtReservationID.Value))
             {
-                lblResMessage.Text = "请先选择要删除的预订！";
+                lblResMessage.Text = "Please select the reservations you wish to delete!";
                 return;
             }
 
@@ -271,14 +257,14 @@ namespace HotelSite
                 int result = DatabaseHelper.ExecuteNonQuery(sql, parameters);
                 if (result > 0)
                 {
-                    lblResMessage.Text = "预订删除成功！";
+                    lblResMessage.Text = "Reservation cancelled successfully!";
                     ClearReservationFields();
                     LoadReservations();
                 }
             }
             catch (Exception ex)
             {
-                lblResMessage.Text = "删除失败：" + ex.Message;
+                lblResMessage.Text = "Deletion failed:" + ex.Message;
             }
         }
 
@@ -302,38 +288,31 @@ namespace HotelSite
             gvSearch.DataBind();
         }
 
-        // ============================
-        //  客户选择事件
-        // ============================
+        
         protected void gvClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = gvClients.SelectedRow;
             txtClientID.Value = gvClients.DataKeys[row.RowIndex].Value.ToString();
-            txtName.Text = row.Cells[2].Text; // 根据实际列调整
+            txtName.Text = row.Cells[2].Text; 
             txtDOB.Text = row.Cells[3].Text;
             txtAddress.Text = row.Cells[4].Text;
             txtMobile.Text = row.Cells[5].Text;
         }
 
-        // ============================
-        //  预订选择事件
-        // ============================
         protected void gvReservations_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = gvReservations.SelectedRow;
             txtReservationID.Value = gvReservations.DataKeys[row.RowIndex].Value.ToString();
-            txtArrival.Text = row.Cells[2].Text; // 根据实际列调整
+            txtArrival.Text = row.Cells[2].Text; 
             txtDeparture.Text = row.Cells[3].Text;
             txtRoomType.Text = row.Cells[4].Text;
 
-            // 设置客户下拉列表
+            
             string clientId = row.Cells[1].Text;
             ddlClient.SelectedValue = clientId;
         }
 
-        // ============================
-        //  清空客户字段
-        // ============================
+      
         void ClearClientFields()
         {
             txtClientID.Value = "";
@@ -343,9 +322,7 @@ namespace HotelSite
             txtMobile.Text = "";
         }
 
-        // ============================
-        //  清空预订字段
-        // ============================
+       
         void ClearReservationFields()
         {
             txtReservationID.Value = "";

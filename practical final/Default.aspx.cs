@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HotelSite
+namespace practical_final
 {
     public partial class Home : System.Web.UI.Page
     {
