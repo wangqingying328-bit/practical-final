@@ -19,7 +19,7 @@ namespace practical_final
 
             if (!IsPostBack)
             {
-                lblWelcome.Text = "欢迎，前台管理员：" + Session["Username"];
+                lblWelcome.Text = "Welcome, Front Desk Administrator:" + Session["Username"];
                 LoadClients();
                 LoadReservations();
                 LoadClientDropdown();
@@ -58,9 +58,6 @@ namespace practical_final
             ddlClient.Items.Insert(0, new ListItem("--Select Customers--", "0"));
         }
 
-        // ============================
-        //  添加客户
-        // ============================
         protected void btnAddClient_Click(object sender, EventArgs e)
         {
             string sql = "INSERT INTO Clients(Name, DOB, Address, Mobile) VALUES (@Name, @DOB, @Address, @Mobile)";
@@ -88,10 +85,6 @@ namespace practical_final
                 lblMessage.Text = "Addition failed:" + ex.Message;
             }
         }
-
-        // ============================
-        //  修改客户
-        // ============================
         protected void btnUpdateClient_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtClientID.Value))
@@ -235,9 +228,6 @@ namespace practical_final
             }
         }
 
-        // ============================
-        //  删除预订
-        // ============================
         protected void btnDeleteRes_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtReservationID.Value))
@@ -268,9 +258,7 @@ namespace practical_final
             }
         }
 
-        // ============================
-        //  搜索客户
-        // ============================
+       
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string sql = @"SELECT c.*, 

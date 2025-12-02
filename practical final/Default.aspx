@@ -12,9 +12,10 @@
             <div class="navbar">
                 <div class="logo">&nbsp;El Hotel Paraíso </div>
                 <ul class="nav-menu">
-                    <li>front page</li>
-                    <li>Log in</li>
-                </ul>
+                <li><a href="Default.aspx">front page</a></li>
+                <li><a href="Login.aspx">Log in</a></li>
+            </ul>
+
             </div>
         </div>
     </div>
@@ -41,12 +42,16 @@
                 </ul>
                 
                 <img src="https://img95.699pic.com/photo/40236/8440.jpg_wh860.jpg" 
-                     alt="Hotel Image" style="width:100%; max-width:800px; margin:20px 0;" />
+                     alt="Hotel Image" style="width:100%; max-width:800px; margin:20px 0;" 
+                    style="display:block; margin:20px auto;"/>
                 
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start your journey now and experience our attentive service!</p>
                 
                 <asp:Button ID="btnLogin" runat="server" Text="Log in now" 
-                    CssClass="btn btn-primary" PostBackUrl="~/Login.aspx" Height="39px" Width="1189px" />
+                    CssClass="btn btn-primary" 
+                    PostBackUrl="~/Login.aspx" 
+                    Height="39px" Width="956px" 
+                    style="display:block; margin:20px auto;"/>
             </div>
         </form>
     </div>
