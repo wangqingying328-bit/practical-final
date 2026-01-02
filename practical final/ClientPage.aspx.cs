@@ -32,7 +32,7 @@ namespace practical_final
             }
             //Retrieve the information of the currently logged-in client from the database.
             int clientId = Convert.ToInt32(Session["ClientID"]);//object change to int
-            string sql = "SELECT * FROM Clients WHERE ClientID = @ClientID";
+            string sql = "SELECT * FROM Clients WHERE ClientID = @ClientID";  //SQL for retrieving customer information  查询客户信息的 SQL
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@ClientID", clientId }
@@ -56,7 +56,7 @@ namespace practical_final
 
             DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters);
             gvReservations.DataSource = dt;
-            gvReservations.DataBind();
+            gvReservations.DataBind(); //It is ultimately displayed on the GridView of the page. 最终显示在页面的 GridView 上
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
