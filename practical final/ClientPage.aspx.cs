@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Web.UI;
 
 namespace practical_final
 {
@@ -55,8 +56,8 @@ namespace practical_final
             };
 
             DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters);
-            gvReservations.DataSource = dt;
-            gvReservations.DataBind(); //It is ultimately displayed on the GridView of the page. 最终显示在页面的 GridView 上
+            gvReservations.DataSource = dt;  //Give data to GridView 把数据给 GridView
+            gvReservations.DataBind(); //Showing on the client page 显示在客户页面上
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

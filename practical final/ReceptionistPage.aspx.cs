@@ -33,8 +33,8 @@ namespace practical_final
             string sql = "SELECT ClientID, Name, DOB, Address, Mobile FROM Clients ORDER BY ClientID";
             DataTable dt = DatabaseHelper.ExecuteQuery(sql);
 
-            gvClients.DataSource = dt;
-            gvClients.DataBind();
+            gvClients.DataSource = dt; //Give data to GridView 把数据给 GridView
+            gvClients.DataBind();  //Showing on the reservation page 显示在预订页面上
         }
 
         private void LoadClientDropdown()
@@ -79,8 +79,8 @@ namespace practical_final
 
             try
             {
-                int rows = DatabaseHelper.ExecuteNonQuery(sql, p);
-                if (rows > 0)
+                int rows = DatabaseHelper.ExecuteNonQuery(sql, p);//Execute SQL 执行SQL     Insert a record into the database 向数据库插入一条记录 
+                if (rows > 0) // 如果成功插入数据
                 {
                     lblMessage.Text = "Customer added successfully!";
                     ClearClientFields();
@@ -90,11 +90,11 @@ namespace practical_final
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Addition failed: " + ex.Message;
+                lblMessage.Text = "Addition failed: " + ex.Message; // 插入失败时显示错误信息
             }
         }
 
-        protected void btnUpdateClient_Click(object sender, EventArgs e)
+        protected void btnUpdateClient_Click(object sender, EventArgs e)  //更新客户 Update customer information
         {
             if (string.IsNullOrEmpty(txtClientID.Value))
             {
@@ -166,7 +166,7 @@ namespace practical_final
         }
 
 
-        protected void btnAddRes_Click(object sender, EventArgs e)
+        protected void btnAddRes_Click(object sender, EventArgs e) //Add reservation 添加预约
         {
             if (ddlClient.SelectedValue == "0")
             {
@@ -201,7 +201,7 @@ namespace practical_final
             }
         }
 
-        protected void btnUpdateRes_Click(object sender, EventArgs e)
+        protected void btnUpdateRes_Click(object sender, EventArgs e) //Update reservation 更新预约
         {
             if (string.IsNullOrEmpty(txtReservationID.Value))
             {
@@ -272,7 +272,7 @@ namespace practical_final
 
        
 
-        protected void btnSearch_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e) //Search clients 搜索客户   按名称或手机号搜索客户
         {
             string sql = @"SELECT c.*,
                            (SELECT COUNT(*) FROM Reservations r
@@ -292,7 +292,7 @@ namespace practical_final
 
         
 
-        protected void gvClients_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvClients_SelectedIndexChanged(object sender, EventArgs e)//点击Customer list中的某一行的choose时触发  Triggered when clicking the "choose" button in a row of the Customer list.
         {
             GridViewRow row = gvClients.SelectedRow;
 
@@ -326,7 +326,7 @@ namespace practical_final
         }
 
 
-        private void ClearClientFields()
+        private void ClearClientFields() //Clear client input fields 清除客户输入字段
         {
             txtClientID.Value = "";
             txtName.Text = "";
