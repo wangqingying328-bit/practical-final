@@ -23,7 +23,7 @@ namespace practical_final
             }
         }
 
-        void LoadClientInfo()
+        void LoadClientInfo()  //加载客户信息 Load client information
         {
             if (Session["ClientID"] == null) //Determine if it is a client
             {
@@ -31,14 +31,14 @@ namespace practical_final
                 return;
             }
             //Retrieve the information of the currently logged-in client from the database.
-            int clientId = Convert.ToInt32(Session["ClientID"]);
+            int clientId = Convert.ToInt32(Session["ClientID"]);//object change to int
             string sql = "SELECT * FROM Clients WHERE ClientID = @ClientID";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@ClientID", clientId }
             };
 
-            DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters);
+            DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters); //Execute the SQL query to obtain the DataTable.
             gvClient.DataSource = dt;
             gvClient.DataBind();
         }
