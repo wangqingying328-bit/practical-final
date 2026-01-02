@@ -1,4 +1,4 @@
-﻿// 预订类
+﻿
 public class Reservation
 {
     public int ReservationID { get; set; }

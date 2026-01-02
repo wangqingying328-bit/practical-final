@@ -12,14 +12,14 @@ namespace practical_final.Models
     {
         private SQLiteConnection conn;
 
-        // 构造函数：自动读取 Web.config 的数据库字符串
+       
         public DatabaseHelper()
         {
             string cs = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
             conn = new SQLiteConnection(cs);
         }
 
-        // 执行查询（返回 DataTable） - 实例方法
+        
         public DataTable Query(string sql)
         {
             conn.Open();
@@ -30,7 +30,7 @@ namespace practical_final.Models
             return dt;
         }
 
-        // 执行查询（返回 DataTable） - 静态方法
+        
         public static DataTable ExecuteQuery(string sql, Dictionary<string, object> parameters = null)
         {
             DataTable dt = new DataTable();
@@ -57,7 +57,7 @@ namespace practical_final.Models
             return dt;
         }
 
-        // 执行增删改 - 实例方法
+        
         public void Execute(string sql)
         {
             conn.Open();
@@ -66,7 +66,7 @@ namespace practical_final.Models
             conn.Close();
         }
 
-        // 执行增删改 - 静态方法
+        
         public static int ExecuteNonQuery(string sql, Dictionary<string, object> parameters = null)
         {
             string cs = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
@@ -88,7 +88,7 @@ namespace practical_final.Models
             }
         }
 
-        // 执行查询返回单个值 - 静态方法
+        
         public static object ExecuteScalar(string sql, Dictionary<string, object> parameters = null)
         {
             string cs = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;

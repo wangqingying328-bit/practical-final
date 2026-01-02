@@ -5,14 +5,15 @@ using System.Data;
 
 namespace practical_final
 {
-    public partial class ClientPage : BasePage
+    public partial class ClientPage : BasePage  //继承BasePage 直接使用 CheckRole()、RequireLogin()
+                                                //you can directly use CheckRole() and RequireLogin().
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)  //Page loading entry页面加载入口
         {
             
-            if (!CheckRole("client"))
+            if (!CheckRole("client"))  //If you are not a client, redirect to the login page
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");  
             }
 
             if (!IsPostBack)
@@ -24,12 +25,12 @@ namespace practical_final
 
         void LoadClientInfo()
         {
-            if (Session["ClientID"] == null)
+            if (Session["ClientID"] == null) //Determine if it is a client
             {
                 lblMessage.Text = "No customer information found！";
                 return;
             }
-
+            //Retrieve the information of the currently logged-in client from the database.
             int clientId = Convert.ToInt32(Session["ClientID"]);
             string sql = "SELECT * FROM Clients WHERE ClientID = @ClientID";
             Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -42,7 +43,7 @@ namespace practical_final
             gvClient.DataBind();
         }
 
-        void LoadReservations()
+        void LoadReservations() //Load client booking list
         {
             if (Session["ClientID"] == null) return;
 
