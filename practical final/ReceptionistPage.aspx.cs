@@ -37,7 +37,7 @@ namespace practical_final
             gvClients.DataBind();  //Showing on the reservation page 显示在预订页面上
         }
 
-        private void LoadClientDropdown()
+        private void LoadClientDropdown()   //DropDownList
         {
             string sql = "SELECT ClientID, Name FROM Clients ORDER BY Name";
             DataTable dt = DatabaseHelper.ExecuteQuery(sql);
@@ -64,7 +64,7 @@ namespace practical_final
 
         
 
-        protected void btnAddClient_Click(object sender, EventArgs e)
+        protected void btnAddClient_Click(object sender, EventArgs e) //Add customer 添加客户按钮
         {
             string sql = @"INSERT INTO Clients(Name, DOB, Address, Mobile)
                            VALUES (@Name, @DOB, @Address, @Mobile)";
@@ -326,7 +326,7 @@ namespace practical_final
         }
 
 
-        private void ClearClientFields() //Clear client input fields 清除客户输入字段
+        private void ClearClientFields() //Clear client input fields 清除客户输入字段  把隐藏的客户 ID 清掉，避免误更新/误删除 Remove hidden customer IDs to prevent accidental updates/deletions.
         {
             txtClientID.Value = "";
             txtName.Text = "";
@@ -335,7 +335,7 @@ namespace practical_final
             txtMobile.Text = "";
         }
 
-        private void ClearReservationFields()
+        private void ClearReservationFields() //Clear reservation input fields 清除预订输入字段  清空预订 ID清空输入框
         {
             txtReservationID.Value = "";
             txtArrival.Text = "";
