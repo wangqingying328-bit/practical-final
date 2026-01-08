@@ -7,7 +7,7 @@ namespace practical_final
 {
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)  //页面加载时会执行 Execute when the page loads
         {
            
             if (Session["UserType"] != null)
@@ -20,20 +20,20 @@ namespace practical_final
             }
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)  //Clicking the login button triggers  点击登录按钮触发
         {
             string user = txtUser.Text.Trim();
             string pass = txtPass.Text.Trim();
 
             
-            string sql = "SELECT Role FROM Users WHERE Username = @User AND Password = @Pass";
+            string sql = "SELECT Role FROM Users WHERE Username = @User AND Password = @Pass";   //Verify username and password, retrieve role. 验证用户名和密码，获取角色
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
                 { "@User", user },
                 { "@Pass", pass }
             };
 
-            DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters);
+            DataTable dt = DatabaseHelper.ExecuteQuery(sql, parameters);  //Execute the query and retrieve the DataTable.  执行查询并获取DataTable
 
             if (dt.Rows.Count > 0)
             {

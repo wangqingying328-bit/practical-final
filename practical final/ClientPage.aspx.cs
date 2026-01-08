@@ -31,6 +31,7 @@ namespace practical_final
                 lblMessage.Text = "No customer information found！";
                 return;
             }
+            
             //Retrieve the information of the currently logged-in client from the database.
             int clientId = Convert.ToInt32(Session["ClientID"]);//object change to int
             string sql = "SELECT * FROM Clients WHERE ClientID = @ClientID";  //SQL for retrieving customer information  查询客户信息的 SQL
